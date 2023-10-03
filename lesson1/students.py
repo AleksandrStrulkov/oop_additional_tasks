@@ -11,14 +11,26 @@
 """
 
 
-class ...:
+class Student:
 
-    def __init__(...):
-        ...
+    def __init__(self, name: str, course: int):
+        self.name = name
+        self.course = course
 
+    @property
+    def get(self):
+        if type(self.name) == int: raise
+        if type(self.course) == str: raise
 
-student_1 = ...
-student_2 = ...
+try:
+    student_1 = Student("Алиса", 3)
+    student_2 = Student("Маргарита", 2)
+    student_1.get
+    student_2.get
+except:
+    print("Неправильно введены значения")
+else:
+    print(f"Программа отработала штатно:\n\
+    {student_1.name, student_1.course}\n\
+    {student_2.name, student_2.course}")
 
-print(student_1.name, student_1.course)  # Алиса 3
-print(student_2.name, student_2.course)  # Маргарита 2

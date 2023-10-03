@@ -15,13 +15,26 @@
 class Bottle:
 
     def __init__(self, color, volume):
-        ...
+        self.color = color
+        self.volume = volume
 
+    @property
+    def get(self):
+        if type(self.volume) == str: raise
 
-bottle_1 = Bottle("Красная", 0.7)
-bottle_2 = ...
-bottle_3 = ...
-
-print(bottle_1.color, bottle_1.volume)  # Красная 0.7
-print(bottle_2.color, bottle_2.volume)  # Белая 0.3
-print(bottle_3.color, bottle_3.volume)  # Черная 1.0
+try:
+    bottle_1 = Bottle("Красная", 2.0)
+    bottle_2 = Bottle("Белая", 4)
+    bottle_3 = Bottle("Синяя", 3.0)
+    bottle_1.get
+    bottle_2.get
+    bottle_3.get
+except:
+    print(f"Введено строковое значение,\n\
+измените на цифровое значение\n\
+в одном из экземпляров класса ")
+else:
+    print(f"Отработано штатно!\n\
+    {bottle_1.color} краска, {bottle_1.volume} кг.\n\
+    {bottle_2.color} краска, {bottle_2.volume} кг.\n\
+    {bottle_3.color} краска, {bottle_3.volume} кг.")
