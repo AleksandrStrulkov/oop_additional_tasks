@@ -15,21 +15,29 @@
 class Number:
 
     def __init__(self, value):
-        ...
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self):
+        return self.value
 
-    def ...:
-        ...
-
-    def ...:
-        ...
+    def add(self, item):
+        self.value += item
+        return self.value
 
 
-n = Number(7)
-print(n.get())  # 7
-n.add(3)
-print(n.get())  # 10
-n.substract(5)
-print(n.get())  # 5
+    def substract(self, item):
+        self.value -= item
+        if self.value <= 0: raise
+        return self.value
+
+
+try:
+    n = Number(1)
+    n.add(int(input()))
+    n.substract(int(input()))
+except:
+    print("Это не может быть меньше или равно 0")
+else:
+    print(f"Все штатно отработано: остаток {n.get()}")
+finally:
+    print("Всем спасибо")
